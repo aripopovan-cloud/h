@@ -1,0 +1,135 @@
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-image: url("/src/img/background.png");
+  background-size: cover; /* чтобы растянулось на весь экран */
+  background-position: top-center; /* центрируем */
+  background-repeat: no-repeat;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 15px 20px;
+}
+
+/* Кнопка меню */
+.menu-button {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.menu-button .line {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #ff69b4;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.5s ease;
+  transform-origin: center;
+}
+
+.side-menu {
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  transform: translateY(-50%);
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  display: flex; /* flex для текста */
+  overflow: hidden; /* важно для скрытия текста при закрытии */
+  width: 0; /* изначально закрыто */
+  transition: width 0.5s ease; /* плавное открытие/закрытие */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.side-menu ul {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.side-menu ul li {
+  color: #ff69b4;
+  font-weight: bold;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.big-text {
+  font-size: 80px;
+  color: #ff69b4; /* ярко-розовый */
+  margin: 40px 0;
+}
+
+.birthday-photo {
+  display: flex;
+  flex-direction: column; /* фото сверху, кнопка снизу */
+  justify-content: center; /* вертикальное центрирование в секции */
+  align-items: center; /* горизонтальное центрирование */
+  margin: 300px 0; /* можно подстроить расстояние сверху/снизу */
+  position: relative;
+}
+
+.photo-container {
+  position: relative; /* для абсолютного колпака */
+  width: 350px; /* размер фотографии */
+  height: 350px;
+}
+
+#child-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* круглая фотография */
+  object-fit: cover;
+}
+
+#adult-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: none; /* скрыта изначально */
+}
+
+.party-hat {
+  position: absolute;
+  top: -100px;
+  left: 60%;
+  transform: translateX(-50%);
+  width: 150px;
+}
+
+#flip-button {
+  margin-top: 20px; /* расстояние от фото */
+  padding: 10px 20px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
